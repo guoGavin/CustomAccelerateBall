@@ -3,6 +3,7 @@ accelerate ball,加速球效果，也就是圆形的ProgressBar的效果。
 
 ##效果图
 录制效果不是很好
+>
 ![Screenshot](https://github.com/guoGavin/CustomAccelerateBall/blob/master/pic.gif)
 
 ##功能
