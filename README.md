@@ -1,5 +1,10 @@
 # CustomAccelerateBall
 accelerate ball,加速球效果，也就是圆形的ProgressBar的效果。
+
+##效果图
+录制效果不是很好
+![Screenshot](https://github.com/guoGavin/CustomAccelerateBall/blob/master/pic.gif)
+
 ##功能
 * 可以设置目标位置，让它自己加速到特定位置。
 * 可以设置不适用加速的动画效果，直接设置到特定位置。
