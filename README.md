@@ -21,7 +21,11 @@ accelerate ball,加速球效果，也就是圆形的ProgressBar的效果。
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginTop="50dp"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal"
+        accelerateball:initLevel="2000"
+        accelerateball:galleryType="AnimationAndPercent"
+        accelerateball:speed="superFast"
+        accelerateball:refreshSpeed="superFast" />
 ```
 
 ##展示类型
