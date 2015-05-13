@@ -133,7 +133,9 @@ public class AccelerateBallView extends RelativeLayout {
         int refreshSpeedArr = arr.getInt(R.styleable.accelerateBallView_refreshSpeed,resources.getInteger(R.integer.accelerateball_refreshspeed_default));
         setRefreshSpeedType(RefreshSpeed.values()[refreshSpeedArr]);
         currentLevel = arr.getInt(R.styleable.accelerateBallView_initLevel,resources.getInteger(R.integer.accelerateball_gallerytype_initlevel));
-        Log.e("","galleryType:"+galleryType+";initLevel:"+currentLevel);
+        if(currentLevel > MAX_LEVEL){
+            throw new IllegalArgumentException("initLevel can't more than " + MAX_LEVEL);
+        }
         arr.recycle();
 
         initView();
