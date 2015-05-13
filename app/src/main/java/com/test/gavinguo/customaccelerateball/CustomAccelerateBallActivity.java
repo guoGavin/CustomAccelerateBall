@@ -23,9 +23,9 @@ public class CustomAccelerateBallActivity extends Activity implements View.OnCli
         percent = (EditText) findViewById(R.id.percent_content);
         start = (Button) findViewById(R.id.start);
         ball = (AccelerateBallView) findViewById(R.id.ball);
-        ball.setSpeedType(AccelerateBallView.Speed.superFast);
-        ball.setRefreshSpeedType(AccelerateBallView.RefreshSpeed.superFast);
-        ball.setGalleryType(AccelerateBallView.GalleryType.AnimationAndPercent);
+//        ball.setSpeedType(AccelerateBallView.Speed.superFast);
+//        ball.setRefreshSpeedType(AccelerateBallView.RefreshSpeed.superFast);
+//        ball.setGalleryType(AccelerateBallView.GalleryType.AnimationAndPercent);
         ball.setAccelerateBallUpdateListener(new AccelerateBallView.AccelerateBallUpdateListener() {
             @Override
             public void updateLeveUp(int currentPercent) {

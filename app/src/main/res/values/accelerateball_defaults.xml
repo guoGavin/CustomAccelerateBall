@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="accelerateball_gallerytype_default">3</integer>
+    <integer name="accelerateball_speed_default">3</integer>
+    <integer name="accelerateball_refreshspeed_default">3</integer>
+    <integer name="accelerateball_gallerytype_initlevel">0</integer>
+</resources>

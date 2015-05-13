@@ -1,9 +1,12 @@
 package com.test.gavinguo.customaccelerateball;
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.graphics.drawable.ClipDrawable;
 import android.os.Handler;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -120,6 +123,19 @@ public class AccelerateBallView extends RelativeLayout {
         this.mContext = context;
         LayoutInflater inflater=(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         contentView = inflater.inflate(R.layout.custome_accelerate, this);
+
+        Resources resources = context.getResources();
+        TypedArray arr = context.obtainStyledAttributes(attrs,R.styleable.accelerateBallView);
+        int galleryTypeArr = arr.getInt(R.styleable.accelerateBallView_galleryType,resources.getInteger(R.integer.accelerateball_gallerytype_default));
+        galleryType = GalleryType.values()[galleryTypeArr];
+        int speedArr = arr.getInt(R.styleable.accelerateBallView_speed,resources.getInteger(R.integer.accelerateball_speed_default));
+        setSpeedType(Speed.values()[speedArr]);
+        int refreshSpeedArr = arr.getInt(R.styleable.accelerateBallView_refreshSpeed,resources.getInteger(R.integer.accelerateball_refreshspeed_default));
+        setRefreshSpeedType(RefreshSpeed.values()[refreshSpeedArr]);
+        currentLevel = arr.getInt(R.styleable.accelerateBallView_initLevel,resources.getInteger(R.integer.accelerateball_gallerytype_initlevel));
+        Log.e("","galleryType:"+galleryType+";initLevel:"+currentLevel);
+        arr.recycle();
+
         initView();
     }
 
@@ -130,8 +146,16 @@ public class AccelerateBallView extends RelativeLayout {
         maskView = (ImageView) contentView.findViewById(R.id.image_mask);
         levelView = (ImageView) contentView.findViewById(R.id.image_level);
         percentView = (TextView) contentView.findViewById(R.id.percent);
+        //是否需要显示
+        if(galleryType == GalleryType.AnimationAndPercent){
+            int percentValue = (int)(currentLevel * 100 / MAX_LEVEL);
+            percentView.setVisibility(View.VISIBLE);
+            percentView.setText(percentValue+"%");
+        }else{
+            percentView.setVisibility(View.GONE);
+        }
         ClipDrawable clip = (ClipDrawable) levelView.getDrawable();
-        clip.setLevel(0);
+        clip.setLevel(currentLevel);
         percentView.setText("0%");
     }
 

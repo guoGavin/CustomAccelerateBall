@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+   <declare-styleable name="accelerateBallView">
+
+       <attr name="galleryType">
+           <enum name="NoneAnimationAndPercent" value="0" /><!-- 没有动画和百分比文字 -->
+           <enum name="NoneAnimationHavePercent" value="1" /><!-- 没有动画但是有文本 -->
+           <enum name="AnimationOnly" value="2" /><!-- 只有动画 -->
+           <enum name="AnimationAndPercent" value="3" /><!-- 具有动画和百分比,默认 -->
+       </attr>
+
+       <attr name="speed">
+           <enum name="slow" value="0"/>
+           <enum name="medium" value="1"/>
+           <enum name="fast" value="2"/>
+           <enum name="superFast" value="3"/>
+           <enum name="random" value="4"/>
+       </attr>
+
+       <attr name="refreshSpeed">
+           <enum name="slow" value="0"/>
+           <enum name="medium" value="1"/>
+           <enum name="fast" value="2"/>
+           <enum name="superFast" value="3"/>
+       </attr>
+
+       <attr name="initLevel" format="integer"/>
+
+   </declare-styleable>
+    
+</resources>
